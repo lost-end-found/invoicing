@@ -90,13 +90,13 @@ async function verifyDomain() {
     await installationStore.setInstallationDomain(formData)
     await installationStore.installationLogin()
     let driverRes = await installationStore.checkAutheticated()
-
     if (driverRes.data) {
       emit('next', 4)
     }
 
     isSaving.value = false
   } catch (e) {
+    console.log(e)
     notificationStore.showNotification({
       type: 'error',
       message: t('wizard.verify_domain.failed'),
