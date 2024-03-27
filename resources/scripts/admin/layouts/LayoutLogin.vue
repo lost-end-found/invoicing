@@ -150,7 +150,7 @@ const pageDescription = computed(() => {
     return window.login_page_description
   }
 
-  return 'Crater helps you track expenses, record payments & generate beautiful invoices & estimates.'
+  return 'Rakun Invoicing Platform helps you track expenses, record payments & generate beautiful invoices & estimates.'
 })
 
 const copyrightText = computed(() => {
