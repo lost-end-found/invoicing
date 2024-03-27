@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vite",
     "build:dev": "vite build --watch",
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "test": "eslint ./resources/scripts --ext .js,.vue"
   },
