@@ -34,7 +34,7 @@
 </template>
 <script>
 function getImage() {
-  const imgUrl = new URL('/img/home-chat..png', import.meta.url)
+  const imgUrl = new URL('/img/home-chat.png', import.meta.url)
   return imgUrl
 }
 </script>
