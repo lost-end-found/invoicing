@@ -83,6 +83,7 @@
           class="
             hidden
             mb-3
+            font-display
             text-3xl
             leading-normal
             text-left text-white
@@ -156,7 +157,7 @@ const copyrightText = computed(() => {
   if (window.copyright_text) {
     return window.copyright_text
   }
-  return 'Copyright @ Crater Invoice, Inc.'
+  return 'Copyright @ Rakun LTD'
 })
 
 const loginPageLogo = computed(() => {

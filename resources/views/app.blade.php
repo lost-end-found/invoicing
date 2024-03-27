@@ -11,6 +11,9 @@
     <link rel="manifest" href="/favicons/site.webmanifest">
     <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5851d8">
     <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -18,23 +21,22 @@
 
     <!-- Module Styles -->
     @foreach(\Crater\Services\Module\ModuleFacade::allStyles() as $name => $path)
-        <link rel="stylesheet" href="/modules/styles/{{ $name }}">
+    <link rel="stylesheet" href="/modules/styles/{{ $name }}">
     @endforeach
 
     @vite
 </head>
 
-<body
-    class="h-full overflow-hidden bg-gray-100 font-base
+<body class="h-full overflow-hidden bg-gray-100 font-base
     @if(isset($current_theme)) theme-{{ $current_theme }} @else theme-{{get_app_setting('admin_portal_theme') ?? 'crater'}} @endif ">
 
     <!-- Module Scripts -->
     @foreach (\Crater\Services\Module\ModuleFacade::allScripts() as $name => $path)
-        @if (\Illuminate\Support\Str::startsWith($path, ['http://', 'https://']))
-            <script type="module" src="{!! $path !!}"></script>
-        @else
-            <script type="module" src="/modules/scripts/{{ $name }}"></script>
-        @endif
+    @if (\Illuminate\Support\Str::startsWith($path, ['http://', 'https://']))
+    <script type="module" src="{!! $path !!}"></script>
+    @else
+    <script type="module" src="/modules/scripts/{{ $name }}"></script>
+    @endif
     @endforeach
 
     <script type="module">
@@ -57,12 +59,12 @@
 
         window.login_page_description = "{{$login_page_description}}"
 
-        @endif     
+        @endif
         @if(isset($copyright_text))
 
         window.copyright_text = "{{$copyright_text}}"
 
-        @endif    
+        @endif
 
         window.Crater.start()
     </script>
